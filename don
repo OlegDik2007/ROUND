@@ -1,0 +1,11 @@
+SELECT
+  id AS product_id,
+  name,
+  price,
+  round((price / 1.20) * 0.2, 2) AS tax,
+  round(price / 1.20, 2) AS price_before_tax
+from
+  products
+ORDER BY
+  price_before_tax DESC,
+  product_id ASC;
