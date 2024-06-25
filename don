@@ -9,3 +9,17 @@ from
 ORDER BY
   price_before_tax DESC,
   product_id ASC;
+
+
+
+SELECT
+  product_id,
+  name,
+  price AS old_price,
+  ROUND(price -(price * 0.2), 2) AS new_price
+FROM
+  products
+WHERE
+  ROUND(price -(price * 0.2), 2) >= 100
+ORDER BY
+  product_id ASC
